@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>基礎から学ぶVue.js</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app' ,
+        data: {
+          message: 'Hello Vue.js!'
+        }
+      })
+    </script>
+  </body>
+</html>
