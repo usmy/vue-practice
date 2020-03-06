@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>基礎から学ぶVue.js</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <div id="app">
       <h1>{{ message }}</h1>
+      <ol>
+        <li v-for="item in list">{{ item }}</li>
+      </ol>
+      <input v-model="message">
+      <button v-on:click="show=!show">Click</button>
+      <transition>
+        <p v-if="show">Hello Vue.js</p>
+      </transition>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -14,7 +23,14 @@
       var app = new Vue({
         el: '#app' ,
         data: {
-          message: 'Hello Vue.js!'
+          message: '初期メッセージ',
+          list: ['りんご', 'ばなな', 'いちご'],
+          show: true
+        },
+        methods: {
+          handleClick: function(event) {
+            alert(event.target)
+          }
         }
       })
     </script>
